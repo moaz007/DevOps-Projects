@@ -1,0 +1,20 @@
+# keep VCS and CI files out of the build context
+.git
+.github
+
+# Python bytecode & caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# local envs and secrets
+venv/
+.env
+
+# OS cruft
+.DS_Store
+
+# not needed inside the image
+docker-compose.yml
