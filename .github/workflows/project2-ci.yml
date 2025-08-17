@@ -1,4 +1,4 @@
-name: Project 2 — CI (tests only)
+name: Project 2 — CI (tests + build + push)
 
 on:
   push:
@@ -11,16 +11,18 @@ on:
       - 'devops-project-2/**'
       - '.github/workflows/project2-ci.yml'
 
+# Need write access to packages to push to GHCR
 permissions:
   contents: read
+  packages: write
 
-# Run all shell steps from the Project 2 folder
+# All shell steps run from Project 2 folder
 defaults:
   run:
     working-directory: devops-project-2
 
 jobs:
-  tests:
+  project2:
     runs-on: ubuntu-latest
 
     steps:
@@ -40,4 +42,34 @@ jobs:
 
       - name: Run unit tests
         run: pytest -q
+
+      - name: Prepare image metadata (name + tags)
+        id: meta
+        run: |
+          # ghcr requires lowercase image names
+          OWNER_LC=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE="ghcr.io/${OWNER_LC}/devops-project-2"
+          SHORT_SHA="${GITHUB_SHA::7}"
+          echo "IMAGE=$IMAGE" >> $GITHUB_ENV
+          echo "SHORT_SHA=$SHORT_SHA" >> $GITHUB_ENV
+          echo "TAG_SHA=sha-$SHORT_SHA" >> $GITHUB_ENV
+          echo "Will publish: $IMAGE:latest and $IMAGE:sha-$SHORT_SHA"
+
+      - name: Build Docker image (tag: latest + sha)
+        run: |
+          docker build -t "$IMAGE:latest" -t "$IMAGE:$TAG_SHA" .
+
+      - name: Log in to GHCR (push events only)
+        if: github.event_name == 'push'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push Docker image (push events only)
+        if: github.event_name == 'push'
+        run: |
+          docker push "$IMAGE:latest"
+          docker push "$IMAGE:$TAG_SHA"
 
