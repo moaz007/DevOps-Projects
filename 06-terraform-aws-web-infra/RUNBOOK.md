@@ -20,7 +20,7 @@ Before running Terraform, here is the exact sequence we follow and **why**:
 
 ## Step 2: Prepare Your S3 Bucket & Security Group IP
 1. **S3 Remote State Bucket (`backend.tf`):**
-   * Confirm the S3 bucket **`terraformstate2180598`** exists in **`us-east-1`** (or update the `bucket` name in `backend.tf` to match your bucket):
+   * Confirm the S3 bucket **`<Unique Bucket Name>`** exists in **`us-east-1`** (or update the `bucket` name in `backend.tf` to match your bucket):
      ```bash
      aws s3 mb s3://terraformstate2180598 --region us-east-1
      ```
