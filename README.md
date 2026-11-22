@@ -1,4 +1,4 @@
-### Moaz Amin's DevOps Projects
+## Moaz Amin's DevOps Projects
 
 This repository is where I keep all the hands-on DevOps and cloud projects I have built, broken, and fixed along my learning journey. Every folder has the config files along with a `README.md` explaining how things fit together and a `RUNBOOK.md` with the commands I used to set it up.
 
