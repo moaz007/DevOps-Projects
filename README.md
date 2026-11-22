@@ -1,10 +1,10 @@
-# Moaz Amin's DevOps Projects
+### Moaz Amin's DevOps Projects
 
 This repository is where I keep all the hands-on DevOps and cloud projects I have built, broken, and fixed along my learning journey. Every folder has the config files along with a `README.md` explaining how things fit together and a `RUNBOOK.md` with the commands I used to set it up.
 
 ---
 
-## My Projects
+### My Projects
 
 1. **[Project 1 — Flask App with Nginx & Docker Compose](01-flask-nginx-docker-compose/)**
    A simple python Flask app with Nginix reverse proxy using Docker Compose which runs over Docker bridge network so Nginx routes it's traffic once Flask app passes it's health check.
