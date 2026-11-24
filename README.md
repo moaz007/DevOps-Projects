@@ -26,4 +26,10 @@ This repository is where I keep all the hands-on DevOps and cloud projects I hav
    This project is my hands on guide for learning Terraform and replacing AWS Console Clicks with Terraform code, starting from hardcoded EC2 resources and moving to variables, SSH provisioners, outputs, and an S3 remote state backend. 
 
 7. **[Project 7 — Server Configuration & AWS Provisioning with Ansible](07-ansible-multi-os-config-mgmt/)**
-   Here I used Ansible to configure mixed servers agentlessly over SSH—moving from a raw playbook to reusable Ansible Roles, and EC2 provisioning through playbook. 
+   Here I used Ansible to configure mixed servers agentlessly over SSH—moving from a raw playbook to reusable Ansible Roles, and EC2 provisioning through playbook.
+
+8. **[Project 8 — AWS CI/CD Pipeline with CodePipeline & CodeBuild](08-aws-codepipeline-codebuild-cicd/)**
+   In this project I built an AWS-native CI/CD pipeline connecting Bitbucket to AWS CodePipeline and CodeBuild to inject RDS credentials at build time, package the vProfile `.war` artifact with Maven, and deploy automatically to Elastic Beanstalk.
+
+9. **[Project 9 — Multi-Tier Web App Deployment on Google Cloud (GCP)](09-gcp-multi-tier-vprofile-deployment/)**
+   Here I automated the multi-tier vProfile deployment on GCP using `gcloud` shell scripts—setting up a custom VPC with Cloud NAT, Private Service Access for Cloud SQL and Memorystore, internal Cloud DNS, a Golden Image Managed Instance Group, and a Global HTTPS Load Balancer with wildcard SSL.
