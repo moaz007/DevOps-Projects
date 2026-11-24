@@ -13,10 +13,10 @@ This repository is where I keep all the hands-on DevOps and cloud projects I hav
 2. **[Project 2 — Automated CI/CD with GitHub Actions & GHCR](02-flask-github-actions-ghcr-cicd/)**
    In this project I set up a GitHub Actions workflow that runs `pytest` on every push, builds the Docker image, and pushes tagged images straight to GitHub Container Registry.
 
-3. **[Project 3 — Multi-Tier Web App on AWS (Lift & Shift)](03-vprofile-aws-lift-and-shift/)**
+3. **[Project 3 — Multi-Tier Web App on AWS (Lift & Shift)](03-aws-lift-and-shift/)**
    Here I deployed the multi-tier vProfile Java stack manually on AWS EC2 instances (Tomcat, MariaDB, Memcached, RabbitMQ) behind an Application Load Balancer, Auto Scaling Group, Golden AMIs, and a Route 53 private hosted zone.
 
-4. **[Project 4 — Refactoring vProfile to Managed AWS Services](04-vprofile-aws-paas-refactoring/)**
+4. **[Project 4 — Refactoring vProfile to Managed AWS Services](04-aws-paas-refactoring/)**
    In this project I refactored the same vProfile application using managed AWS PaaS services instead of self-hosted EC2 servers—moving onto Elastic Beanstalk, RDS, ElastiCache, Amazon MQ, S3, and CloudFront.
 
 5. **[Project 5 — CI/CD Pipeline with Jenkins, SonarQube & Nexus](05-jenkins-sonarqube-nexus-cicd/)**
@@ -31,5 +31,5 @@ This repository is where I keep all the hands-on DevOps and cloud projects I hav
 8. **[Project 8 — AWS CI/CD Pipeline with CodePipeline & CodeBuild](08-aws-codepipeline-codebuild-cicd/)**
    In this project I built an AWS-native CI/CD pipeline connecting Bitbucket to AWS CodePipeline and CodeBuild to inject RDS credentials at build time, package the vProfile `.war` artifact with Maven, and deploy automatically to Elastic Beanstalk.
 
-9. **[Project 9 — Multi-Tier Web App Deployment on Google Cloud (GCP)](09-gcp-multi-tier-vprofile-deployment/)**
+9. **[Project 9 — Multi-Tier Web App Deployment on Google Cloud (GCP)](09-gcp-multi-tier-deployment/)**
    Here I automated the multi-tier vProfile deployment on GCP using `gcloud` shell scripts—setting up a custom VPC with Cloud NAT, Private Service Access for Cloud SQL and Memorystore, internal Cloud DNS, a Golden Image Managed Instance Group, and a Global HTTPS Load Balancer with wildcard SSL.
